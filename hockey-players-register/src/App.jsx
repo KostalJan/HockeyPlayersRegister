@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
-import { fetchPlayerData } from "./utils/api";
+import { fetchPlayerData, fetchTeamData } from "./utils/api";
 
 const App = () => {
   const [player, setPlayer] = useState(null);
+  const [team, setTeam] = useState(null);
 
   useEffect(() => {
-    fetchPlayerData(8449423).then((data) => {
+    fetchPlayerData(8478402).then((data) => {
       setPlayer(data);
+      console.log(data);
+    });
+  }, []);
+
+  useEffect(() => {
+    fetchTeamData("edm").then((data) => {
+      setTeam(data);
     });
   }, []);
 
@@ -14,14 +22,15 @@ const App = () => {
     <div>
       {player ? (
         <div>
-          <h1>
-            {player.firstName.default} {player.lastName.default}
-            <img src={player.headshot} alt="" />
-          </h1>
+          <h3>
+            {player.firstName.default} {player.lastName.default}{" "}
+            {player.birthCountry} {player.birthDate} {player.position}
+          </h3>
         </div>
       ) : (
-        <p>Načítám hráče</p>
+        <p>Loading player...</p>
       )}
+      {team ? <p>{team.season}</p> : <p>Loading team...</p>}
     </div>
   );
 };
