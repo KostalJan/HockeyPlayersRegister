@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
-import { fetchPlayerData, fetchTeamData } from "./utils/api";
+import { fetchData } from "./utils/api";
 
 const App = () => {
   const [player, setPlayer] = useState(null);
   const [team, setTeam] = useState(null);
 
   useEffect(() => {
-    fetchPlayerData(8478402).then((data) => {
+    fetchData('player', 8477201).then((data) => {
       setPlayer(data);
-      console.log(data);
     });
   }, []);
 
   useEffect(() => {
-    fetchTeamData("edm").then((data) => {
+    fetchData("team", "tor").then((data) => {
       setTeam(data);
     });
   }, []);
@@ -30,7 +29,7 @@ const App = () => {
       ) : (
         <p>Loading player...</p>
       )}
-      {team ? <p>{team.season}</p> : <p>Loading team...</p>}
+      {team ? <p>{team.gameType}</p> : <p>Loading team...</p>}
     </div>
   );
 };

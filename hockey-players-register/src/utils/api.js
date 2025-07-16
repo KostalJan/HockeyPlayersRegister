@@ -1,27 +1,13 @@
 import axios from "axios";
 
-
-export const fetchPlayerData = async (id) => {
+export const fetchData = async (url, id) => {
   try {
-    const response = await axios.get(
-      `http://localhost:3001/api/player/${id}`
-    );
-    return response.data;
-  } catch (error) {
-    console.error("Chyba při načítání dat (klient): ", error.message);
-    return null;
-  }
-};
-
-
-export const fetchTeamData = async (id) => {
-  try {
-    const response = await axios.get(
-      `http://localhost:3001/api/team/${id}`
-    );
+    const response = await axios.get(`http://localhost:3001/api/${url}/${id}`);
     return response.data;
   } catch (error) {
     console.error("Chyba při načítání dat: ", error.message);
     return null;
   }
 };
+
+
