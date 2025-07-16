@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchData } from "./utils/api";
-import PlayerDetail from "./components/PlayerDetail";
+import { Link } from "react-router-dom";
 
 const App = () => {
   const [allPlayers, setAllPlayers] = useState([]);
@@ -11,7 +11,8 @@ const App = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  
+
+  //Obsluha změny ve vyhledávání
   const handleChange = (event) => {
     const input = event.target.value;
     setPlayerName(input);
@@ -32,6 +33,8 @@ const App = () => {
     setMessage("");
   };
 
+
+  //Obsluha odeslání formuláře
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -79,17 +82,23 @@ const App = () => {
         <input type="submit" />
       </form>
       <div>
+        {playerName && filteredPlayers.length > 0 && (
+          <ul>
+            {filteredPlayers.map((player) => {
+              return (
+                <li key={player.id}>
+                  <Link to={`/player/${player.id}`}
+                  state={{player}}>
+                    {player.firstName} {player.lastName}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        )}
         {loading && <p>Načítám...</p>}
         {error && <p>Chyba při načítání hráčů.</p>}
         {message && <p>{message}</p>}
-
-        {playerName &&
-          filteredPlayers.length > 0 &&
-          filteredPlayers.map((player) => (
-            <div key={player.id}>
-              {player.firstName} {player.lastName}
-            </div>
-          ))}
       </div>
     </div>
   );
