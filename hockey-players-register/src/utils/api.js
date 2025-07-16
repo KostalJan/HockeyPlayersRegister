@@ -1,6 +1,8 @@
 import axios from "axios";
 
-export const fetchData = async (url, id) => {
+
+//Načte data z url serveru
+export const fetchData = async (url, id='') => {
   try {
     const response = await axios.get(`http://localhost:3001/api/${url}/${id}`);
     return response.data;

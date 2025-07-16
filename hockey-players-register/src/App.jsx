@@ -1,44 +1,95 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchData } from "./utils/api";
+import PlayerDetail from "./components/PlayerDetail";
 
 const App = () => {
-  const [playerId, setPlayerId] = useState(null);
-  const [player, setPlayer] = useState(null);
+  const [allPlayers, setAllPlayers] = useState([]);
+  const [filteredPlayers, setFilteredPlayers] = useState([]);
+  const [playerName, setPlayerName] = useState("");
+
+  const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  
+  const handleChange = (event) => {
+    const input = event.target.value;
+    setPlayerName(input);
+
+    if (!input || input.trim() === "") {
+      setFilteredPlayers([]);
+      setMessage("");
+      return;
+    }
+
+    const filtered = allPlayers.filter((onePlayer) => {
+      const fullName =
+        `${onePlayer.firstName} ${onePlayer.lastName}`.toLowerCase();
+      return fullName.includes(input.toLowerCase());
+    });
+
+    setFilteredPlayers(filtered);
+    setMessage("");
+  };
+
   const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (filteredPlayers.length === 0) {
+      setMessage("Hráč nebyl nalezen");
+    } else {
+      setMessage("");
+    }
+
+    const filteredResults = allPlayers.filter((onePlayer) => {
+      return onePlayer.firstName.toLowerCase() === playerName.toLowerCase();
+    });
+
+    setFilteredPlayers(filteredResults);
+
+    if (filteredPlayers.length === 0) {
+      setMessage("Hráč nebyl nalezen");
+    } else {
+      setMessage("");
+    }
+    setPlayerName("");
+  };
+
+  useEffect(() => {
     setLoading(true);
     setError(false);
-    event.preventDefault();
-    fetchData("player", playerId)
-      .then((data) => setPlayer(data))
+    fetchData("players")
+      .then((data) => setAllPlayers(data))
       .catch(() => {
-        setPlayer(null);
+        setAllPlayers([]);
         setError(true);
-        console.log("Hráč s daným ID neexistuje");
       })
       .finally(() => setLoading(false));
-  };
+  }, []);
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Search player"
-          onChange={(event) => setPlayerId(event.target.value)}
+          placeholder="First name"
+          onChange={handleChange}
+          value={playerName}
         />
         <input type="submit" />
       </form>
       <div>
-        {loading && <p>Načítám</p>}
-        {error && <p>Hráč nenalezen</p>}
-        {player && (
-          <p>
-            {player.firstName.default} {player.lastName.default}
-          </p>
-        )}
+        {loading && <p>Načítám...</p>}
+        {error && <p>Chyba při načítání hráčů.</p>}
+        {message && <p>{message}</p>}
+
+        {playerName &&
+          filteredPlayers.length > 0 &&
+          filteredPlayers.map((player) => (
+            <div key={player.id}>
+              {player.firstName} {player.lastName}
+            </div>
+          ))}
       </div>
     </div>
   );

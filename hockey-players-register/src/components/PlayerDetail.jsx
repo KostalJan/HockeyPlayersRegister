@@ -1,8 +1,9 @@
-import React from 'react'
 
-const PlayerDetail = () => {
+const PlayerDetail = ({player}) => {
   return (
-    <div>PlayerDetail</div>
+    <div>
+      {player.firstName.default} {player.lastName.default}
+    </div>
   )
 }
 
