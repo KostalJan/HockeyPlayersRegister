@@ -1,35 +1,45 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { fetchData } from "./utils/api";
 
 const App = () => {
+  const [playerId, setPlayerId] = useState(null);
   const [player, setPlayer] = useState(null);
-  const [team, setTeam] = useState(null);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    fetchData('player', 8477201).then((data) => {
-      setPlayer(data);
-    });
-  }, []);
-
-  useEffect(() => {
-    fetchData("team", "tor").then((data) => {
-      setTeam(data);
-    });
-  }, []);
+  const handleSubmit = (event) => {
+    setLoading(true);
+    setError(false);
+    event.preventDefault();
+    fetchData("player", playerId)
+      .then((data) => setPlayer(data))
+      .catch(() => {
+        setPlayer(null);
+        setError(true);
+        console.log("Hráč s daným ID neexistuje");
+      })
+      .finally(() => setLoading(false));
+  };
 
   return (
     <div>
-      {player ? (
-        <div>
-          <h3>
-            {player.firstName.default} {player.lastName.default}{" "}
-            {player.birthCountry} {player.birthDate} {player.position}
-          </h3>
-        </div>
-      ) : (
-        <p>Loading player...</p>
-      )}
-      {team ? <p>{team.gameType}</p> : <p>Loading team...</p>}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Search player"
+          onChange={(event) => setPlayerId(event.target.value)}
+        />
+        <input type="submit" />
+      </form>
+      <div>
+        {loading && <p>Načítám</p>}
+        {error && <p>Hráč nenalezen</p>}
+        {player && (
+          <p>
+            {player.firstName.default} {player.lastName.default}
+          </p>
+        )}
+      </div>
     </div>
   );
 };

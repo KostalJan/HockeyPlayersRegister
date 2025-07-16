@@ -6,8 +6,6 @@ export const fetchData = async (url, id) => {
     return response.data;
   } catch (error) {
     console.error("Chyba při načítání dat: ", error.message);
-    return null;
+    throw error;
   }
 };
-
-
