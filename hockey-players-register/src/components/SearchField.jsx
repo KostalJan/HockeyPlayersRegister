@@ -55,10 +55,10 @@ const SearchField = (className = "") => {
     <div className={`relative ${className}`}>
       <input
         type="text"
-        placeholder="First name"
+        placeholder="Type name"
         onChange={handleChange}
         value={playerName}
-        className="px-3 py-2 border border-gray-300 rounded w-full max-w-md"
+        className="px-3 py-2 border border-black rounded w-full max-w-md"
       />
       <div className="mt-2 w-full max-w-md">
         {playerName && filteredPlayers.length > 0 && (

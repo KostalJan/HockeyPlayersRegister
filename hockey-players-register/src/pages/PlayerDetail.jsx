@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { fetchData } from "../utils/api";
 import { formatBirthDate } from "../utils/formatBirthDate";
 import { getPlayersAge } from "../utils/getPlayersAge";
 import SearchField from "../components/SearchField";
+import WelcomePage from "./WelcomePage";
+
 
 const PlayerDetail = () => {
   const { playerId } = useParams();
@@ -54,6 +56,7 @@ const PlayerDetail = () => {
     <section className="bg-[#cdd9e5] min-h-screen  flex flex-col ">
       <div className="flex justify-center items-center mt-4">
         <SearchField className="mt-8 max-w-2xl mx-auto"/>
+        <Link to='/' element={WelcomePage} className="ml-5">Home</Link>
       </div>
       <div className="flex justify-center">
         <img
