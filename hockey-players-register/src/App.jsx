@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchData } from "./utils/api";
 import { Link } from "react-router-dom";
 
+
 const App = () => {
   const [allPlayers, setAllPlayers] = useState([]);
   const [filteredPlayers, setFilteredPlayers] = useState([]);
@@ -58,6 +59,7 @@ const App = () => {
     setPlayerName("");
   };
 
+
   useEffect(() => {
     setLoading(true);
     setError(false);
@@ -70,8 +72,9 @@ const App = () => {
       .finally(() => setLoading(false));
   }, []);
 
+
   return (
-    <div>
+    <div className="">
       <form onSubmit={handleSubmit}>
         <input
           type="text"

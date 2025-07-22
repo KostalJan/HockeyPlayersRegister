@@ -29,11 +29,17 @@ for abbrev in team_abbrevs:
             'headshot': player['headshot'],
             "firstName": player["firstName"]['default'],
             "lastName": player["lastName"]['default'],
-            "position": player.get("positionCode", 'unknown'),
+            "position": player.get("positionCode", 'N/A'),
             "team": abbrev,
-            "country": player['birthCountry']
+            "country": player['birthCountry'],
+            "sweaterNumber": player.get("sweaterNumber", "N/A"),
+            "heightCm": player["heightInCentimeters"],
+            "weightCm": player["weightInKilograms"],
+            "birthDate": player["birthDate"],
+            "birthCity": player["birthCity"]["default"],
         })
 
 #Uložení dat o hráčích do souboru players.json       
 with open("../server/players.json", "w", encoding="utf-8") as f:
+    print(f"Uloženo {len(all_players)} hráčů do souboru.")
     json.dump(all_players, f, ensure_ascii=False, indent=2)
