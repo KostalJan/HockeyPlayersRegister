@@ -1,0 +1,22 @@
+[
+  { "country": "CZE", "flag": "cz.png" },
+  { "country": "CAN", "flag": "ca.png" },
+  { "country": "USA", "flag": "us.png" },
+  { "country": "SWE", "flag": "se.png" },
+  { "country": "RUS", "flag"  : "ru.png" },
+  { "country": "FIN", "flag": "fi.png" },
+  { "country": "CHE", "flag": "ch.png" },
+  { "country": "SVK", "flag": "sk.png" },
+  { "country": "DEU", "flag": "de.png" },
+  { "country": "LVA", "flag": "lv.png" },
+  { "country": "FRA", "flag": "fr.png" },
+  { "country": "NOR", "flag": "no.png" },
+  { "country": "AUS", "flag": "au.png" },
+  { "country": "NLD", "flag": "nl.png" },
+  { "country": "AUT", "flag": "at.png" },
+  { "country": "SVN", "flag": "si.png" },
+  { "country": "BLR", "flag": "by.png" },
+  { "country": "GBR", "flag": "gb.png" },
+  { "country": "UZB", "flag": "uz.png" },
+  { "country": "BGR", "flag": "bg.png" }
+]
