@@ -2,8 +2,8 @@
  * Najde obrázek podle libovolného JSONu a klíčů.
  *
  * @param {Array} jsonData - JSON data (např. flags, teams, icons...)
- * @param {string} matchKey - klíč, podle kterého hledáš záznam (např. "country")
- * @param {string} matchValue - hodnota, kterou hledáš (např. "CZE")
+ * @param {string} matchKey - klíč, podle kterého se hledá záznam (např. "country")
+ * @param {string} matchValue - hledaná hodnota (např. "CZE")
  * @param {string} imageKey - klíč, kde se nachází název souboru (např. "flag", "logo")
  * @param {string} folder - složka v assets, kde jsou obrázky (např. "icons", "team_logos")
  * @returns {string|null} - URL k obrázku nebo null
@@ -35,4 +35,9 @@ export const getImageUrl = (
     console.error(`Failed to resolve image path for file '${fileName}'`, error);
     return null;
   }
+};
+
+export const getObject = (jsonData, matchKey, matchValue) => {
+  const match = jsonData.find((entry) => entry[matchKey] === matchValue);
+  return match;
 };

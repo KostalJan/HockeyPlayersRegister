@@ -1,0 +1,226 @@
+[
+  {
+    "team": "ANA",
+    "fullTeamName": "Anaheim Ducks",
+    "logo": "ana.png",
+    "primaryColor": "#B5985A",
+    "secondaryColor": "#F95602"
+  },
+  {
+    "team": "UTA",
+    "fullTeamName": "Utah Mammoth",
+    "logo": "uta.png",
+    "primaryColor": "#4B2E83",
+    "secondaryColor": "#F0EBD8"
+  },
+  {
+    "team": "BOS",
+    "fullTeamName": "Boston Bruins",
+    "logo": "bos.png",
+    "primaryColor": "#FFB81C",
+    "secondaryColor": "#000000"
+  },
+  {
+    "team": "BUF",
+    "fullTeamName": "Buffalo Sabres",
+    "logo": "buf.png",
+    "primaryColor": "#002654",
+    "secondaryColor": "#FDBB2F"
+  },
+  {
+    "team": "CGY",
+    "fullTeamName": "Calgary Flames",
+    "logo": "cgy.png",
+    "primaryColor": "#C8102E",
+    "secondaryColor": "#F1BE48"
+  },
+  {
+    "team": "CAR",
+    "fullTeamName": "Carolina Hurricanes",
+    "logo": "car.png",
+    "primaryColor": "#CC0000",
+    "secondaryColor": "#000000"
+  },
+  {
+    "team": "CHI",
+    "fullTeamName": "Chicago Blackhawks",
+    "logo": "chi.png",
+    "primaryColor": "#CF0A2C",
+    "secondaryColor": "#000000"
+  },
+  {
+    "team": "COL",
+    "fullTeamName": "Colorado Avalanche",
+    "logo": "col.png",
+    "primaryColor": "#6F263D",
+    "secondaryColor": "#236192"
+  },
+  {
+    "team": "CBJ",
+    "fullTeamName": "Columbus Blue Jackets",
+    "logo": "cbj.png",
+    "primaryColor": "#002654",
+    "secondaryColor": "#CE1126"
+  },
+  {
+    "team": "DAL",
+    "fullTeamName": "Dallas Stars",
+    "logo": "dal.png",
+    "primaryColor": "#006847",
+    "secondaryColor": "#8F8F8C"
+  },
+  {
+    "team": "DET",
+    "fullTeamName": "Detroit Red Wings",
+    "logo": "det.png",
+    "primaryColor": "#CE1126",
+    "secondaryColor": "#FFFFFF"
+  },
+  {
+    "team": "EDM",
+    "fullTeamName": "Edmonton Oilers",
+    "logo": "edm.png",
+    "primaryColor": "#002F87",
+    "secondaryColor": "#FF4C00"
+  },
+  {
+    "team": "FLA",
+    "fullTeamName": "Florida Panthers",
+    "logo": "fla.png",
+    "primaryColor": "#C8102E",
+    "secondaryColor": "#041E42"
+  },
+  {
+    "team": "LAK",
+    "fullTeamName": "Los Angeles Kings",
+    "logo": "lak.png",
+    "primaryColor": "#111111",
+    "secondaryColor": "#A2AAAD"
+  },
+  {
+    "team": "MIN",
+    "fullTeamName": "Minnesota Wild",
+    "logo": "min.png",
+    "primaryColor": "#154734",
+    "secondaryColor": "#A6192E"
+  },
+  {
+    "team": "MTL",
+    "fullTeamName": "Montreal Canadiens",
+    "logo": "mtl.png",
+    "primaryColor": "#AF1E2D",
+    "secondaryColor": "#192168"
+  },
+  {
+    "team": "NSH",
+    "fullTeamName": "Nashville Predators",
+    "logo": "nsh.png",
+    "primaryColor": "#FFB81C",
+    "secondaryColor": "#041E42"
+  },
+  {
+    "team": "NJD",
+    "fullTeamName": "New Jersey Devils",
+    "logo": "njd.png",
+    "primaryColor": "#CE1126",
+    "secondaryColor": "#000000"
+  },
+  {
+    "team": "NYI",
+    "fullTeamName": "New York Islanders",
+    "logo": "nyi.png",
+    "primaryColor": "#00539B",
+    "secondaryColor": "#F47D30"
+  },
+  {
+    "team": "NYR",
+    "fullTeamName": "New York Rangers",
+    "logo": "nyr.png",
+    "primaryColor": "#0038A8",
+    "secondaryColor": "#CE1126"
+  },
+  {
+    "team": "OTT",
+    "fullTeamName": "Ottawa Senators",
+    "logo": "ott.png",
+    "primaryColor": "#C8102E",
+    "secondaryColor": "#000000"
+  },
+  {
+    "team": "PHI",
+    "fullTeamName": "Philadelphia Flyers",
+    "logo": "phi.png",
+    "primaryColor": "#F74902",
+    "secondaryColor": "#000000"
+  },
+  {
+    "team": "PIT",
+    "fullTeamName": "Pittsburgh Penguins",
+    "logo": "pit.png",
+    "primaryColor": "#FCB514",
+    "secondaryColor": "#000000"
+  },
+  {
+    "team": "SJS",
+    "fullTeamName": "San Jose Sharks",
+    "logo": "sjs.png",
+    "primaryColor": "#006D75",
+    "secondaryColor": "#EA7200"
+  },
+  {
+    "team": "SEA",
+    "fullTeamName": "Seattle Kraken",
+    "logo": "sea.png",
+    "primaryColor": "#001628",
+    "secondaryColor": "#99D9D9"
+  },
+  {
+    "team": "STL",
+    "fullTeamName": "St. Louis Blues",
+    "logo": "stl.png",
+    "primaryColor": "#002F87",
+    "secondaryColor": "#FDB827"
+  },
+  {
+    "team": "TBL",
+    "fullTeamName": "Tampa Bay Lightning",
+    "logo": "tbl.png",
+    "primaryColor": "#00205B",
+    "secondaryColor": "#FFFFFF"
+  },
+  {
+    "team": "TOR",
+    "fullTeamName": "Toronto Maple Leafs",
+    "logo": "tor.png",
+    "primaryColor": "#00205B",
+    "secondaryColor": "#A2AAAD"
+  },
+  {
+    "team": "VAN",
+    "fullTeamName": "Vancouver Canucks",
+    "logo": "van.png",
+    "primaryColor": "#00205B",
+    "secondaryColor": "#00843D"
+  },
+  {
+    "team": "VGK",
+    "fullTeamName": "Vegas Golden Knights",
+    "logo": "vgk.png",
+    "primaryColor": "#B4975A",
+    "secondaryColor": "#333F42"
+  },
+  {
+    "team": "WSH",
+    "fullTeamName": "Washington Capitals",
+    "logo": "wsh.png",
+    "primaryColor": "#041E42",
+    "secondaryColor": "#C8102E"
+  },
+  {
+    "team": "WPG",
+    "fullTeamName": "Winnipeg Jets",
+    "logo": "wpg.png",
+    "primaryColor": "#041E42",
+    "secondaryColor": "#AC162C"
+  }
+]

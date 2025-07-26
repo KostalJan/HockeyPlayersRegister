@@ -18,5 +18,6 @@
   { "country": "BLR", "flag": "by.png" },
   { "country": "GBR", "flag": "gb.png" },
   { "country": "UZB", "flag": "uz.png" },
-  { "country": "BGR", "flag": "bg.png" }
+  { "country": "BGR", "flag": "bg.png" },
+  { "country": "DNK", "flag": "dk.png"}
 ]
