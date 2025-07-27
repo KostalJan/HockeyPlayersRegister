@@ -66,64 +66,77 @@ const PlayerDetail = () => {
   const teamLogoUrl = new URL(`../assets/team_logos/${logo}`, import.meta.url)
     .href;
 
-  const isBgDark = isDark(primaryColor)? "text-white" : "text-black";
-
+  const isBgDark = isDark(primaryColor) ? "text-white" : "text-black";
 
   return (
     <section
       style={{ backgroundColor: primaryColor }}
-      className="min-h-screen  flex flex-col"
+      className="min-h-screen flex flex-col"
     >
-      <div className="flex justify-center items-center mt-4">
-        <SearchField className="mt-8 max-w-2xl mx-auto" />
-        <Link to="/" element={<WelcomePage />} className="ml-5">
+      <div className="flex justify-center items-center mt-12 gap-5 px-4">
+        <SearchField className=" w-full max-w-2xl " bgDark={isBgDark} />
+        <Link to="/" element={<WelcomePage />} className={`mr-3 ${isBgDark}`}>
           Home
         </Link>
       </div>
-      <div className="flex flex-col justify-center items-center">
-        <img
-          src={headshot}
-          alt={`Headshot of ${firstName} ${lastName}`}
-          className=" w-[150px] h-[150px] mt-20 mb-4 rounded-3xl bg-[#adbac7]"
-        />
-        <img src={teamLogoUrl} alt={`${team} logo`} className="w-[150px] " />
-      </div>
-      <div className="flex flex-col md:flex-row md:justify-around items-center gap-6 mt-10">
-        <h2 className= {`${isBgDark} text-4xl font-extrabold`}>
-          {firstName} {lastName}
-        </h2>
-        <p className= {`${isBgDark} text-3xl font-extrabold`}>#{sweaterNumber}</p>
-      </div>
-      <div className="flex justify-evenly mt-10 text-2xl text-[#545d68] font-bold">
-        <p className={`${isBgDark}`}>{position}</p>
-        <p className={`${isBgDark}`}>{fullTeamName}</p>
-      </div>
-      <div className="flex flex-col md:flex-row mb-5 items-center justify-center gap-6 mt-12 text-xl font-bold md:divide-y-0 md:divide-x divide-[#909dab]">
-        <div className="flex flex-col w-full md:w-1/3 items-center">
-          <p style={{ color: secondaryColor }}>Age</p>
-          <p className={`${isBgDark} mt-0.5`}>{getPlayersAge(birthDate)}</p>
+      <div className="md:flex justify-evenly ">
+        {/* Levý sloupec s obrázky */}
+        <div className="flex flex-col items-center gap-10">
+          <img
+            src={headshot}
+            alt={`Headshot of ${firstName} ${lastName}`}
+            className=" w-[150px] h-[150px] mt-20 md:w-[320px] md:h-[320px] rounded-3xl bg-[#adbac7]"
+          />
+          <img
+            src={teamLogoUrl}
+            alt={`${team} logo`}
+            className="w-[100px] mt-5 md:w-[150px] "
+          />
         </div>
-        <div className="flex flex-col w-full md:w-1/3 items-center">
-          <p style={{ color: secondaryColor }}>Height</p>
-          <p className={`${isBgDark} mt-0.5`}>{heightCm} cm</p>
-        </div>
-        <div className="flex flex-col w-full md:w-1/3 items-center">
-          <p style={{ color: secondaryColor }}>Weight</p>
-          <p className={`${isBgDark} mt-0.5`}>{weightCm} kg</p>
-        </div>
-      </div>
-      <div className="flex flex-col md:flex-row mb-5 items-center justify-center gap-6 md:mt-12 text-xl text-[#0C2D48] font-bold md:divide-y-0 md:divide-x divide-[#909dab]">
-        <div className="flex flex-col w-full md:w-1/2 items-center">
-          <p style={{ color: secondaryColor }}>Birthdate</p>
-          <p className={`${isBgDark} mt-0.5`}>{formatBirthDate(birthDate)}</p>
-        </div>
-        <div className="flex flex-col w-full md:w-1/2 items-center">
-          <p style={{ color: secondaryColor }}>Birthplace</p>
-          <div className="flex items-center">
-            <img src={flagUrl} alt={`${country} flag`} className="mr-2" />
-            <p className={`${isBgDark} mt-0.5`}>
-              {country}, {birthCity}
+        {/* Pravý sloupec s texty */}
+        <div>
+          <div className="flex flex-col md:flex-row md:justify-around items-center gap-6 md:gap-10 mt-10 md:mt-15">
+            <h2 className={`${isBgDark} text-4xl md:text-[70px] font-extrabold`}>
+              {firstName} {lastName}
+            </h2>
+            <p className={`${isBgDark} text-3xl md:text-[70px] font-extrabold`}>
+              #{sweaterNumber}
             </p>
+          </div>
+          <div className="flex justify-evenly mt-10 text-2xl md:text-[50px] text-[#545d68] font-bold md:gap-10">
+            <p className={`${isBgDark}`}>{position}</p>
+            <p className={`${isBgDark}`}>{fullTeamName}</p>
+          </div>
+          <div className="flex flex-col md:flex-row mb-5 items-center justify-center gap-6 mt-12 text-xl md:text-3xl font-bold md:divide-y-0 md:divide-x divide-[#909dab]">
+            <div className="flex flex-col w-full md:w-1/3 items-center">
+              <p style={{ color: secondaryColor }}>Age</p>
+              <p className={`${isBgDark} mt-0.5 md:mt-2`}>{getPlayersAge(birthDate)}</p>
+            </div>
+            <div className="flex flex-col w-full md:w-1/3 items-center">
+              <p style={{ color: secondaryColor }}>Height</p>
+              <p className={`${isBgDark} mt-0.5 md:mt-2`}>{heightCm} cm</p>
+            </div>
+            <div className="flex flex-col w-full md:w-1/3 items-center">
+              <p style={{ color: secondaryColor }}>Weight</p>
+              <p className={`${isBgDark} mt-0.5 md:mt-2`}>{weightCm} kg</p>
+            </div>
+          </div>
+          <div className="flex flex-col md:flex-row mb-5 items-center justify-center gap-6 md:mt-12 text-xl md:text-3xl text-[#0C2D48] font-bold md:divide-y-0 md:divide-x divide-[#909dab]">
+            <div className="flex flex-col w-full md:w-1/2 items-center">
+              <p style={{ color: secondaryColor }}>Birthdate</p>
+              <p className={`${isBgDark} mt-0.5 md:mt-2`}>
+                {formatBirthDate(birthDate)}
+              </p>
+            </div>
+            <div className="flex flex-col w-full md:w-1/2 items-center">
+              <p style={{ color: secondaryColor }}>Birthplace</p>
+              <div className="flex items-center">
+                <img src={flagUrl} alt={`${country} flag`} className="mr-2" />
+                <p className={`${isBgDark} mt-0.5 md:mt-2`}>
+                  {country}, {birthCity}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

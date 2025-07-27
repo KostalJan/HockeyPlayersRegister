@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchData } from "../utils/api";
 import { Link } from "react-router-dom";
 
-const SearchField = (className = "") => {
+const SearchField = ({ className = "", bgDark = false }) => {
   const [allPlayers, setAllPlayers] = useState([]);
   const [filteredPlayers, setFilteredPlayers] = useState([]);
   const [playerName, setPlayerName] = useState("");
@@ -51,6 +51,8 @@ const SearchField = (className = "") => {
       .finally(() => setLoading(false));
   }, []);
 
+  const textColor = bgDark ? "text-white" : "text-black";
+
   return (
     <div className={`relative ${className}`}>
       <input
@@ -58,15 +60,19 @@ const SearchField = (className = "") => {
         placeholder="Type name"
         onChange={handleChange}
         value={playerName}
-        className="px-3 py-2 border border-black rounded w-full max-w-md"
+        className={`px-3 py-2 border rounded w-full max-w-md ${textColor}`}
       />
       <div className="mt-2 w-full max-w-md">
         {playerName && filteredPlayers.length > 0 && (
           <ul className="absolute top-full left-0 w-full max-w-md bg-white rounded shadow-md mt-1 max-h-60 overflow-y-auto divide-y z-50">
             {filteredPlayers.map((player) => {
               return (
-                <li key={player.id} >
-                  <Link to={`/player/${player.id}`} state={{ player }} className=" block w-full hover:bg-gray-100 px-4 py-2">
+                <li key={player.id}>
+                  <Link
+                    to={`/player/${player.id}`}
+                    state={{ player }}
+                    className=" block w-full hover:bg-gray-100 px-4 py-2"
+                  >
                     {player.firstName} {player.lastName}
                   </Link>
                 </li>
