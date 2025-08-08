@@ -73,68 +73,77 @@ const PlayerDetail = () => {
       style={{ backgroundColor: primaryColor }}
       className="min-h-screen flex flex-col"
     >
-      <div className="flex justify-center items-center mt-12 gap-5 px-4">
-        <SearchField className=" w-full max-w-2xl " bgDark={isBgDark} />
-        <Link to="/" element={<WelcomePage />} className={`mr-3 ${isBgDark}`}>
-          Home
-        </Link>
-      </div>
-      <div className="md:flex justify-evenly ">
-        {/* Levý sloupec s obrázky */}
-        <div className="flex flex-col items-center gap-10">
-          <img
-            src={headshot}
-            alt={`Headshot of ${firstName} ${lastName}`}
-            className=" w-[150px] h-[150px] mt-20 md:w-[320px] md:h-[320px] rounded-3xl bg-[#adbac7]"
-          />
-          <img
-            src={teamLogoUrl}
-            alt={`${team} logo`}
-            className="w-[100px] mt-5 md:w-[150px] "
-          />
+      <div className="w-full mx-auto max-w-6xl px-4 md:px-12 py-6 md:py-12">
+        <div className="flex justify-center items-center mt-6 md:mt-0 gap-5">
+          <SearchField className=" w-full max-w-2xl " bgDark={isBgDark} />
+          <Link to="/" element={<WelcomePage />} className={`mr-3 ${isBgDark}`}>
+            Home
+          </Link>
         </div>
-        {/* Pravý sloupec s texty */}
-        <div>
-          <div className="flex flex-col md:flex-row md:justify-around items-center gap-6 md:gap-10 mt-10 md:mt-15">
-            <h2 className={`${isBgDark} text-4xl md:text-[70px] font-extrabold`}>
-              {firstName} {lastName}
-            </h2>
-            <p className={`${isBgDark} text-3xl md:text-[70px] font-extrabold`}>
-              #{sweaterNumber}
-            </p>
+        <div className="md:flex md:justify-between gap-8 md:gap-16 mt-8 md:mt-12">
+          {/* Levý sloupec s obrázky */}
+          <div className="flex flex-col items-center gap-10">
+            <img
+              src={headshot}
+              alt={`Headshot of ${firstName} ${lastName}`}
+              className=" w-[150px] h-[150px] mt-20 md:w-[300px] md:h-[300px]  rounded-3xl bg-[#adbac7]"
+            />
+            <img
+              src={teamLogoUrl}
+              alt={`${team} logo`}
+              className="w-[100px] mt-5 md:w-[150px] "
+            />
           </div>
-          <div className="flex justify-evenly mt-10 text-2xl md:text-[50px] text-[#545d68] font-bold md:gap-10">
-            <p className={`${isBgDark}`}>{position}</p>
-            <p className={`${isBgDark}`}>{fullTeamName}</p>
-          </div>
-          <div className="flex flex-col md:flex-row mb-5 items-center justify-center gap-6 mt-12 text-xl md:text-3xl font-bold md:divide-y-0 md:divide-x divide-[#909dab]">
-            <div className="flex flex-col w-full md:w-1/3 items-center">
-              <p style={{ color: secondaryColor }}>Age</p>
-              <p className={`${isBgDark} mt-0.5 md:mt-2`}>{getPlayersAge(birthDate)}</p>
-            </div>
-            <div className="flex flex-col w-full md:w-1/3 items-center">
-              <p style={{ color: secondaryColor }}>Height</p>
-              <p className={`${isBgDark} mt-0.5 md:mt-2`}>{heightCm} cm</p>
-            </div>
-            <div className="flex flex-col w-full md:w-1/3 items-center">
-              <p style={{ color: secondaryColor }}>Weight</p>
-              <p className={`${isBgDark} mt-0.5 md:mt-2`}>{weightCm} kg</p>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row mb-5 items-center justify-center gap-6 md:mt-12 text-xl md:text-3xl text-[#0C2D48] font-bold md:divide-y-0 md:divide-x divide-[#909dab]">
-            <div className="flex flex-col w-full md:w-1/2 items-center">
-              <p style={{ color: secondaryColor }}>Birthdate</p>
-              <p className={`${isBgDark} mt-0.5 md:mt-2`}>
-                {formatBirthDate(birthDate)}
+          {/* Pravý sloupec s texty */}
+          <div>
+            <div className="flex flex-col md:flex-row md:justify-around items-center gap-6 md:gap-10 mt-10 md:mt-15">
+              <h2
+                className={`${isBgDark} text-4xl md:text-[70px] font-extrabold`}
+                style={{ fontSize: "clamp(2rem, 6vw, 56px)" }}
+              >
+                {firstName} {lastName}
+              </h2>
+              <p
+                className={`${isBgDark} text-3xl md:text-[70px] font-extrabold`}
+              >
+                #{sweaterNumber}
               </p>
             </div>
-            <div className="flex flex-col w-full md:w-1/2 items-center">
-              <p style={{ color: secondaryColor }}>Birthplace</p>
-              <div className="flex items-center">
-                <img src={flagUrl} alt={`${country} flag`} className="mr-2" />
+            <div className="flex justify-evenly mt-10 text-2xl md:text-[50px] text-[#545d68] font-bold md:gap-10">
+              <p className={`${isBgDark}`}>{position}</p>
+              <p className={`${isBgDark}`}>{fullTeamName}</p>
+            </div>
+            <div className="flex flex-col md:flex-row mb-5 items-center justify-center gap-6 mt-12 text-xl md:text-3xl font-bold md:divide-y-0 md:divide-x divide-[#909dab]">
+              <div className="flex flex-col w-full md:w-1/3 items-center">
+                <p style={{ color: secondaryColor }}>Age</p>
                 <p className={`${isBgDark} mt-0.5 md:mt-2`}>
-                  {country}, {birthCity}
+                  {getPlayersAge(birthDate)}
                 </p>
+              </div>
+              <div className="flex flex-col w-full md:w-1/3 items-center">
+                <p style={{ color: secondaryColor }}>Height</p>
+                <p className={`${isBgDark} mt-0.5 md:mt-2`}>{heightCm} cm</p>
+              </div>
+              <div className="flex flex-col w-full md:w-1/3 items-center">
+                <p style={{ color: secondaryColor }}>Weight</p>
+                <p className={`${isBgDark} mt-0.5 md:mt-2`}>{weightCm} kg</p>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row mb-5 items-center justify-center gap-6 md:mt-12 text-xl md:text-3xl text-[#0C2D48] font-bold md:divide-y-0 md:divide-x divide-[#909dab]">
+              <div className="flex flex-col w-full md:w-1/2 items-center">
+                <p style={{ color: secondaryColor }}>Birthdate</p>
+                <p className={`${isBgDark} mt-0.5 md:mt-2`}>
+                  {formatBirthDate(birthDate)}
+                </p>
+              </div>
+              <div className="flex flex-col w-full md:w-1/2 items-center">
+                <p style={{ color: secondaryColor }}>Birthplace</p>
+                <div className="flex items-center">
+                  <img src={flagUrl} alt={`${country} flag`} className="mr-2" />
+                  <p className={`${isBgDark} mt-0.5 md:mt-2`}>
+                    {country}, {birthCity}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
