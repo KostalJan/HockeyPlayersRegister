@@ -38,7 +38,7 @@ A React + Express application that fetches and displays NHL player and team info
 
 
 ## Preview
-![App Screenshot](./assets/preview.png)
+![App Screenshot](./src/assets/preview.png)
 *Example of player detail view.*
 
 
