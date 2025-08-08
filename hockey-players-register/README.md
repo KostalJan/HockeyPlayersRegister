@@ -1,12 +1,49 @@
-# React + Vite
+# NHL Players Register
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Express application that fetches and displays NHL player and team information from the NHL public API.
 
-Currently, two official plugins are available:
+## Features
+- Search for NHL players
+- View detailed player information (photo, stats, birth info, team info)
+- Responsive design with Tailwind CSS
+- Backend proxy with Express to fetch data from the NHL API
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Frontend:** React, Tailwind CSS
+- **Backend:** Node.js, Express
+- **Data Fetching:** Axios
+- **API Source:** [NHL API](https://api-web.nhle.com)
 
-## Expanding the ESLint configuration
+## Tech Stack
+- **Frontend:** React, Tailwind CSS
+- **Backend:** Node.js, Express
+- **Data Fetching:** Axios
+- **API Source:** [NHL API](https://api-web.nhle.com)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Dependencies
+### Production
+- `react` – UI library
+- `react-dom` – React rendering for web
+- `react-router-dom` – Routing for React
+- `axios` – HTTP client for API calls
+- `express` – Backend framework
+- `cors` – Enable cross-origin requests
+
+### Development
+- `vite` – Frontend build tool
+- `tailwindcss` – Utility-first CSS framework
+- `autoprefixer` – CSS vendor prefixer (used by Tailwind)
+- `postcss` – CSS processing
+- `nodemon` – Auto-restart backend during development
+
+
+## Preview
+![App Screenshot](./preview.png)
+*Example of player detail view.*
+
+
+## Getting Started
+
+### 1. Install dependencies
+```bash
+npm install

@@ -71,7 +71,7 @@ const PlayerDetail = () => {
   return (
     <section
       style={{ backgroundColor: primaryColor }}
-      className="min-h-screen flex flex-col"
+      className="min-h-screen flex flex-col w-full overflow-x-hidden"
     >
       <div className="w-full mx-auto max-w-6xl px-4 md:px-12 py-6 md:py-12">
         <div className="flex justify-center items-center mt-6 md:mt-0 gap-5">
@@ -80,31 +80,36 @@ const PlayerDetail = () => {
             Home
           </Link>
         </div>
-        <div className="md:flex md:justify-between gap-8 md:gap-16 mt-8 md:mt-12">
+        <div className="md:flex md:flex-nowrap md:justify-between gap-8 md:gap-12 mt-8 md:mt-12 flex-wrap">
           {/* Levý sloupec s obrázky */}
           <div className="flex flex-col items-center gap-10">
             <img
               src={headshot}
               alt={`Headshot of ${firstName} ${lastName}`}
-              className=" w-[150px] h-[150px] mt-20 md:w-[300px] md:h-[300px]  rounded-3xl bg-[#adbac7]"
+              className=" w-[150px] h-[150px] mt-20 md:w-[240px] md:h-[240px] max-w-full rounded-3xl bg-[#adbac7]"
             />
             <img
               src={teamLogoUrl}
               alt={`${team} logo`}
-              className="w-[100px] mt-5 md:w-[150px] "
+              className="w-[100px] mt-5 md:w-[120px] max-w-full"
             />
           </div>
           {/* Pravý sloupec s texty */}
           <div>
             <div className="flex flex-col md:flex-row md:justify-around items-center gap-6 md:gap-10 mt-10 md:mt-15">
               <h2
-                className={`${isBgDark} text-4xl md:text-[70px] font-extrabold`}
-                style={{ fontSize: "clamp(2rem, 6vw, 56px)" }}
+                className={`${isBgDark} font-extrabold leading-tight flex-shrink`}
+                style={{
+                  fontSize: "clamp(1.5rem, 4vw, 56px)",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}
               >
                 {firstName} {lastName}
               </h2>
               <p
-                className={`${isBgDark} text-3xl md:text-[70px] font-extrabold`}
+                className={`${isBgDark} text-3xl md:text-[56px] font-extrabold`}
               >
                 #{sweaterNumber}
               </p>
