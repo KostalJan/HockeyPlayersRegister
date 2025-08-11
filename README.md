@@ -12,13 +12,13 @@ A React + Express application that fetches and displays NHL player and team info
 - **Frontend:** React, Tailwind CSS
 - **Backend:** Node.js, Express
 - **Data Fetching:** Axios
-- **API Source:** [NHL API](https://api-web.nhle.com)
+- **API Source:** [NHL API](https://github.com/Zmalski/NHL-API-Reference)
 
 ## Tech Stack
 - **Frontend:** React, Tailwind CSS
 - **Backend:** Node.js, Express
 - **Data Fetching:** Axios
-- **API Source:** [NHL API](https://api-web.nhle.com)
+- **API Source:** [NHL API](https://github.com/Zmalski/NHL-API-Reference)
 
 ## Dependencies
 ### Production
